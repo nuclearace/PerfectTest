@@ -8,10 +8,7 @@ import PerfectMustache
 class HelloPageRenderer : MustachePageHandler {
     func extendValuesForResponse(context contxt: MustacheWebEvaluationContext,
                                  collector: MustacheEvaluationOutputCollector) {
-        var values = MustacheEvaluationContext.MapType()
-
-        values["name"] = contxt.webRequest.urlVariables["name"] ?? ""
-        contxt.extendValues(with: values)
+        contxt.extendValues(with: ["name": contxt.webRequest.urlVariables["name"] ?? ""])
 
         do {
             try contxt.requestCompleted(withCollector: collector)
