@@ -1,6 +1,16 @@
 import PerfectLib
 import PerfectHTTP
 import PerfectHTTPServer
+import MySQLStORM
+
+MySQLConnector.host = dbHost
+MySQLConnector.username = dbUser
+MySQLConnector.password = dbPassword
+MySQLConnector.database = db
+MySQLConnector.port = dbPort
+
+try createTables()
+try updateTables()
 
 let server = HTTPServer()
 var routes = Routes()

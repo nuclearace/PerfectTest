@@ -6,6 +6,6 @@
     const name = 'hello_world';
 
     $.get({ url: '/api/name/echo/?' + $.param({ name: name }), success: (response) => {
-        $('#name').text(response['name']);
+        console.log(response['name']);
     }});
 })();

@@ -17,11 +17,13 @@ func addJavaScriptRoutes(_ routes: inout Routes) {
 
 func addApiRoutes(_ routes: inout Routes) {
     routes.add(method: .get, uri: "/api/name/echo/", handler: handleNameEcho)
+    routes.add(method: .post, uri: "/api/users/create/", handler: handleUserCreate)
 }
 
 func addWebRoutes(_ routes: inout Routes) {
     routes.add(method: .get, uri: "/", handler: handleWebDir)
     routes.add(method: .get, uri: "/index.html", handler: handleWebDir)
+    routes.add(method: .get, uri: "/new.html", handler: handleWebDir)
     routes.add(method: .get, uri: "/{name}/hello.html", handler: handleHello)
 }
 
